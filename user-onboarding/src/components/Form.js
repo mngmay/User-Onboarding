@@ -57,7 +57,7 @@ const FormikOnboardingForm = withFormik({
 
   handleSubmit(values) {
     axios
-      .post(`https://regres.in/api/users`, values)
+      .post(`https://reqres.in/api/users/`, values)
       .then(res => console.log(res))
       .catch(err => console.log(err.response));
   }
