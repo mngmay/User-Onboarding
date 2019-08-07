@@ -8,7 +8,7 @@ const UsersList = ({ users }) => {
     <List>
       {users.map(user => {
         return (
-          <li key={Date.now()}>
+          <li key={user.id}>
             Name: {user.name} Role: {user.role}
           </li>
         );

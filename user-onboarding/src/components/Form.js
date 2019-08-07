@@ -79,7 +79,7 @@ const FormikOnboardingForm = withFormik({
       .post(`https://reqres.in/api/users/`, values)
       .then(res => {
         setStatus(res.data);
-        // resetForm();
+        resetForm();
       })
       .catch(err => console.log(err.response));
   }
