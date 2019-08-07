@@ -6,9 +6,13 @@ const UsersList = ({ users }) => {
 
   return (
     <List>
-      {users.map(user => (
-        <li key={Date.now()}>{user.name}</li>
-      ))}
+      {users.map(user => {
+        return (
+          <li key={Date.now()}>
+            Name: {user.name} Role: {user.role}
+          </li>
+        );
+      })}
     </List>
   );
 };

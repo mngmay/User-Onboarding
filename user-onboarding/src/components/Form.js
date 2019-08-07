@@ -4,18 +4,16 @@ import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { UserForm } from "./Styles";
 
-const OnboardingForm = ({
-  errors,
-  touched,
-  values,
-  status,
-  users,
-  setUsers
-}) => {
+const OnboardingForm = ({ errors, touched, values, status, statusUpdate }) => {
+  //   useEffect(() => {
+  //     if (status) {
+  //       setUsers([...users, status]);
+  //       console.log("form state", users);
+  //     }
+  //   }, [status]);
+
   useEffect(() => {
-    if (status) {
-      setUsers([...users, status]);
-    }
+    statusUpdate(status);
   }, [status]);
 
   return (
@@ -36,9 +34,9 @@ const OnboardingForm = ({
 
         <Field component="select" name="role" className="role-select">
           <option>Select Your Role</option>
-          <option value="student">Student</option>
-          <option value="lead">Section or Team Lead</option>
-          <option value="instructor">Instructor</option>
+          <option value="Student">Student</option>
+          <option value="Lead">Section or Team Lead</option>
+          <option value="Instructor">Instructor</option>
         </Field>
 
         <label>
@@ -76,10 +74,13 @@ const FormikOnboardingForm = withFormik({
     terms: Yup.bool().oneOf([true], "Terms must be accepted to proceed")
   }),
 
-  handleSubmit(values, { setStatus }) {
+  handleSubmit(values, { setStatus, resetForm }) {
     axios
       .post(`https://reqres.in/api/users/`, values)
-      .then(res => setStatus(res.data))
+      .then(res => {
+        setStatus(res.data);
+        // resetForm();
+      })
       .catch(err => console.log(err.response));
   }
 })(OnboardingForm);
