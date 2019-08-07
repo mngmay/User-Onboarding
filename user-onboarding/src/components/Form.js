@@ -5,13 +5,6 @@ import * as Yup from "yup";
 import { UserForm } from "./Styles";
 
 const OnboardingForm = ({ errors, touched, values, status, statusUpdate }) => {
-  //   useEffect(() => {
-  //     if (status) {
-  //       setUsers([...users, status]);
-  //       console.log("form state", users);
-  //     }
-  //   }, [status]);
-
   useEffect(() => {
     statusUpdate(status);
   }, [status]);

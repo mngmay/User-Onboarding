@@ -6,12 +6,10 @@ import "./App.css";
 
 function App() {
   const [users, setUsers] = useState([]);
-  console.log("app state", users);
 
   const statusUpdate = status => {
     if (status) {
       setUsers([...users, status]);
-      console.log("status", status, "user state", users);
     }
   };
 

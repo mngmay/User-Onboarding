@@ -57,10 +57,11 @@ export const Container = styled.div`
 `;
 
 export const List = styled.ul`
-  width: 500px;
+  width: 250px;
   height: 100%;
   display: flex;
+  padding-left: 20px;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   font-size: 1.5rem;
 `;
