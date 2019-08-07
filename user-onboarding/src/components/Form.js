@@ -34,6 +34,13 @@ const OnboardingForm = ({
           <p className="error">{errors.password}</p>
         )}
 
+        <Field component="select" name="role" className="role-select">
+          <option>Select Your Role</option>
+          <option value="student">Student</option>
+          <option value="lead">Section or Team Lead</option>
+          <option value="instructor">Instructor</option>
+        </Field>
+
         <label>
           Terms of Service
           <Field type="checkbox" name="terms" checked={values.terms} />

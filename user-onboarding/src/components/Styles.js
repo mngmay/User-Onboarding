@@ -14,11 +14,13 @@ export const UserForm = styled.div`
     width: 150px;
     height: 30px;
     font-size: 1.5rem;
+    margin: 10px;
   }
 
   input[type="text"],
   input[type="email"],
-  input[type="password"] {
+  input[type="password"], 
+  .role-select{
     outline: none;
     border-radius: 5px;
     margin: 10px 0;
