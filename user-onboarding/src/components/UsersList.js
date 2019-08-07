@@ -1,14 +1,15 @@
 import React from "react";
+import { List } from "./Styles";
 
 const UsersList = ({ users }) => {
-  console.log("users in list", users);
+  //   console.log("users in list", users);
+
   return (
-    <div>
-      <h1>List of Users</h1>
+    <List>
       {users.map(user => (
         <li key={Date.now()}>{user.name}</li>
       ))}
-    </div>
+    </List>
   );
 };
 export default UsersList;

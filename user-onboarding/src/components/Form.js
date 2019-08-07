@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { UserForm } from "./Styles";
 
 const OnboardingForm = ({
   errors,
@@ -18,8 +19,8 @@ const OnboardingForm = ({
   }, [status]);
 
   return (
-    <div className="onboarding-form">
-      <Form>
+    <Form>
+      <UserForm>
         <Field type="text" name="name" placeholder="Name" />
         {touched.name && errors.name && <p className="error">{errors.name}</p>}
 
@@ -42,8 +43,8 @@ const OnboardingForm = ({
         )}
 
         <button type="submit">Submit</button>
-      </Form>
-    </div>
+      </UserForm>
+    </Form>
   );
 };
 
