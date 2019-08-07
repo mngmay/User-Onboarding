@@ -57,7 +57,7 @@ const FormikOnboardingForm = withFormik({
   },
 
   validationSchema: Yup.object().shape({
-    name: Yup.string().required(),
+    name: Yup.string().required("Name is required"),
     email: Yup.string()
       .email("Email not valid")
       .required("Email is required"),
